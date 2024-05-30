@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: vamsimallerevhirefrontend 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: vamsimallerevhirefrontend
+  template:
+    metadata:
+      labels:
+        app: vamsimallerevhirefrontend 
+    spec:
+      containers:
+        - name: vamsimallerevhirefrontend 
+          image: saruku.azurecr.io/vamsimallerevhirefrontend
+          ports:
+          - containerPort: 4200
