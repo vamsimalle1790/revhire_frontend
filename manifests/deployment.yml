@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: revhirefrontend 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: revhirefrontend
+  template:
+    metadata:
+      labels:
+        app: revhirefrontend 
+    spec:
+      containers:
+        - name: revhirefrontend 
+          image: saruku.azurecr.io/revhirefrontend
+          ports:
+          - containerPort: 4200
